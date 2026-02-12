@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人博客</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 侧边栏 -->
+        <aside class="sidebar">
+            <div class="profile">
+                <h2>我的博客</h2>
+                <p>记录生活与思考</p>
+            </div>
+            <nav class="post-nav">
+                <h3>文章列表</h3>
+                <ul id="post-list">
+                    <!-- 文章列表将通过 JavaScript 动态生成 -->
+                </ul>
+            </nav>
+        </aside>
+        
+        <!-- 主内容区 -->
+        <main class="content">
+            <div id="editor-section" style="display: none;">
+                <h2>✏️ 编辑新文章</h2>
+                <input type="text" id="post-title" placeholder="输入文章标题..." style="width: 100%; padding: 10px; margin-bottom: 10px; font-size: 18px;">
+                <textarea id="markdown-content" placeholder="使用 Markdown 编写文章内容..."></textarea>
+                <div class="button-group">
+                    <button onclick="savePost()" class="btn-primary">💾 保存文章</button>
+                    <button onclick="cancelEdit()" class="btn-secondary">❌ 取消</button>
+                </div>
+            </div>
+            
+            <div id="viewer-section">
+                <button onclick="showEditor()" class="btn-primary">➕ 新建文章</button>
+                <article id="post-content">
+                    <!-- 文章内容将通过 JavaScript 动态显示 -->
+                    <p style="color: #999;">选择左侧文章阅读，或点击上方按钮创建新文章。</p>
+                </article>
+            </div>
+        </main>
+    </div>
+    
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</body>
+</html>
