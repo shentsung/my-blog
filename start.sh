@@ -1,7 +1,6 @@
 #!/bin/bash
-# 启动博客服务器
+# 博客启动脚本
 
 cd "$(dirname "$0")"
-echo "Starting blog server at http://localhost:8000"
-echo "Press Ctrl+C to stop"
-python3 -m http.server 8000
+nohup python blog.py > /var/log/blog.log 2>&1 &
+echo "博客服务已启动，访问 http://localhost:5000"

@@ -1,82 +1,50 @@
-# 个人博客系统
+# 鱼塘主的博客
 
-一个简约风格的 Markdown 个人博客。
+基于 Flask 的个人博客系统，展示 AI 行业新闻和机器人行业新闻。
 
-## 📁 文件结构
+## 技术栈
+
+- **后端**: Flask (Python)
+- **模板引擎**: Jinja2
+- **Markdown 渲染**: mistune
+- **样式**: 内置 CSS（深色主题）
+
+## 目录结构
 
 ```
 my-blog/
-├── index.html      # 主页面
-├── style.css       # 样式文件
-├── app.js          # JavaScript 逻辑
-├── posts/          # 博客文章目录
-│   └── welcome.md  # 示例文章
-└── README.md       # 说明文档
+├── blog.py          # Flask 主程序
+├── posts/           # Markdown 文章目录
+│   ├── AI行业新闻-*.md
+│   └── 机器人行业新闻-*.md
+├── start.sh         # 启动脚本
+└── README.md
 ```
 
-## ✨ 功能特点
-
-- ✅ 简约设计风格
-- ✅ Markdown 编辑支持
-- ✅ 侧边栏按日期排序显示
-- ✅ 响应式设计（支持手机）
-- ✅ 数据保存在本地（LocalStorage）
-- ✅ 无需服务器，直接浏览器打开
-
-## 🚀 使用方法
-
-### 方法一：直接打开（推荐）
-
-1. 进入 `my-blog` 目录
-2. 双击打开 `index.html`
-3. 开始写博客！
-
-### 方法二：本地服务器
+## 运行
 
 ```bash
-cd my-blog
-python3 -m http.server 8000
+# 安装依赖
+pip install flask mistune
+
+# 启动服务
+python blog.py
+# 或
+./start.sh
+
+# 访问
+# http://localhost:5000
 ```
 
-然后访问：http://localhost:8000
+## 文章分类
 
-## 📝 使用指南
+- 🤖 AI 新闻：每日 AI 行业动态
+- ⚙️ 机器人行业：机器人领域新闻
 
-### 1. 新建文章
+## 自动更新
 
-点击页面顶部的"➕ 新建文章"按钮。
+博客文章每天自动更新并推送到 GitHub。
 
-### 2. 编辑文章
+---
 
-- 输入文章标题
-- 使用 Markdown 编写内容
-- 支持：标题、列表、代码、链接等
-
-### 3. 保存文章
-
-点击"💾 保存文章"按钮。
-
-### 4. 阅读文章
-
-点击侧边栏的文章标题即可阅读。
-
-## 🔧 技术栈
-
-- HTML5 + CSS3
-- Vanilla JavaScript
-- Marked.js（Markdown 渲染）
-- LocalStorage（数据存储）
-
-## 📱 响应式设计
-
-博客完美支持手机、平板和桌面电脑访问。
-
-## ⚠️ 注意
-
-- 文章数据保存在浏览器本地，清理缓存会丢失
-- 如需长期保存，建议定期备份数据
-- 不支持图片上传（仅支持图片链接）
-
-## 📄 License
-
-MIT License
+*由小龙虾 🦞 维护*
